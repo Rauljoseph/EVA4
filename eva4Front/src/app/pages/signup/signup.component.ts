@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { User } from '../../model/user';
 import { comparePassword, encryptPassword } from './password';
-import { log } from 'util';
 import { Router } from '@angular/router';
 
 @Component({

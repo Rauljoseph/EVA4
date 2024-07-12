@@ -1,3 +1,7 @@
 .custom-class{
     min-height: 100vh;
 }
+
+.a-custom-class{
+    cursor: pointer;
+}

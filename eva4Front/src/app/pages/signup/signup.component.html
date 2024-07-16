@@ -1,17 +1,30 @@
-<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 custom-class">
-    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+<section class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 custom-class">
+    <header class="sm:mx-auto sm:w-full sm:max-w-sm">
       <!-- <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> -->
       <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Registra tu cuenta</h2>
-    </div>
+    </header>
   
-    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <section class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form class="space-y-6" action="#" method="POST">
         <div>
             <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Nombre usuario</label>
             <div class="mt-2">
-              <input id="username" name="signupForm.username" type="text" autocomplete="username" placeholder="Vanessa" [(ngModel)]="signupForm.username" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+              <input id="username" name="signupForm.username" type="text" autocomplete="username" placeholder="Vanessa" [(ngModel)]="signupForm.username" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+              required 
+              [ngClass]="{
+                'input-invalid': isInvalid, 
+                'input-valid': isValid, 
+                'input-default': !isInvalid && !isValid
+              }">
+
+              @if(isValid){
+                <div class="text-red-500 text-sm mt-1">
+                  El campo es inválido.
+                </div>
+              }
             </div>
           </div>
+        
         <div>
           <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
           <div class="mt-2">
@@ -25,7 +38,7 @@
             
           </div>
           <div class="mt-2">
-            <input id="password" name="signupForm.password" type="password" autocomplete="current-password" placeholder="****" [(ngModel)]="signupForm.password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+            <input id="password" name="signupForm.password" type="password" autocomplete="current-password" placeholder="********" [(ngModel)]="signupForm.password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
           </div>
         </div>
 
@@ -34,7 +47,7 @@
               <label for="confirm-password" class="block text-sm font-medium leading-6 text-gray-900">Confirmar contraseña</label>
             </div>
             <div class="mt-2">
-              <input id="confirm-password" name="signupForm.confirmPassword" type="password" autocomplete="current-password" placeholder="****" [(ngModel)]="signupForm.confirmPassword" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ">
+              <input id="confirm-password" name="signupForm.confirmPassword" type="password" autocomplete="current-password" placeholder="********" [(ngModel)]="signupForm.confirmPassword" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ">
             </div>
         </div>
 
@@ -56,6 +69,6 @@
         ¿Tienes cuenta?
         <a  class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 a-custom-class" (click)="navigateToLogin()">Iniciar Sesión</a>
       </p>
-    </div>
-  </div>
+    </section>
+</section>
   

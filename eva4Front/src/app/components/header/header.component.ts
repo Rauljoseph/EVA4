@@ -14,6 +14,14 @@ export class HeaderComponent {
   constructor(public router: Router){}
 
   navigateToSignup(){
-    this.router.navigate(['registro'])
+    this.router.navigate(['signup'])
+  }
+
+  navigateToHome(){
+    this.router.navigate(['home'])
+  }
+
+  navigateToLogin(){
+    this.router.navigate(['login'])
   }
 }

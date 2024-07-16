@@ -1,0 +1,22 @@
+.custom-section{
+    min-height: 100vh;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid red;
+    padding: 20px;
+}
+
+a{
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-custom{
+    width: 100px;
+}

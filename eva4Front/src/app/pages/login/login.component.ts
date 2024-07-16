@@ -34,16 +34,13 @@ export default class LoginComponent {
   }
 
   async loginMethod() {
-    const data = this.signupService.getItem(this.login.username);
-
-    console.log('esta es la data', data);
-
+    const username = this.login.username.toLocaleLowerCase()
+    const data = this.signupService.getItem(username);
     if (!data) {
       return (this.warningMessage = 'No se ha encontrado ningun usuario');
     }
 
     const isMatch = await comparePassword(this.login.password, data.password);
-    console.log('match', isMatch);
     if (!isMatch) {
       this.warningMessage = 'Contraseña incorrecta';
       return;

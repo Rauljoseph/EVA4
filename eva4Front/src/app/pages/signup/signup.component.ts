@@ -87,19 +87,18 @@ export default class SignupComponent {
 
 
     const currentUser = {
-      username: this.signupForm.username,
-      email: this.signupForm.email,
+      username: this.signupForm.username.toLocaleLowerCase(),
+      email: this.signupForm.email.toLocaleLowerCase(),
       password: hashedPassword,
     };
 
     console.log(currentUser);
-    console.log(this.signupForm);
-
+    
     this.setUser(this.signupForm.username, currentUser);
   }
 
   setUser(username: string, body: object) {
-    this.localStorage.setItem(username, JSON.stringify(body));
+    this.localStorage.setItem(username.toLocaleLowerCase(), JSON.stringify(body));
     this.signupForm = {
       username: '',
       email: '',

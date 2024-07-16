@@ -18,6 +18,8 @@ export class SignupService {
   getItem(key: string): User | null {
     if (typeof window !== 'undefined' && window.localStorage) {
       const item = localStorage.getItem(key)
+      console.log('este es el local', item);
+      
       if (item) {
         return JSON.parse(item) as User;
       }

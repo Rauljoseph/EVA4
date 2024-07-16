@@ -12,10 +12,7 @@ import { comparePassword } from '../../password';
   styleUrl: './login.component.css',
 })
 export default class LoginComponent {
-  constructor(
-    private router: Router,
-    private signupService: SignupService
-  ) {}
+  constructor(private router: Router, private signupService: SignupService) {}
 
   login = {
     username: '',
@@ -34,7 +31,7 @@ export default class LoginComponent {
   }
 
   async loginMethod() {
-    const username = this.login.username.toLocaleLowerCase()
+    const username = this.login.username.toLocaleLowerCase();
     const data = this.signupService.getItem(username);
     if (!data) {
       return (this.warningMessage = 'No se ha encontrado ningun usuario');
@@ -64,7 +61,7 @@ export default class LoginComponent {
     this.router.navigate(['signup']);
   }
 
-  navigateToPasswordRecover(){
-    this.router.navigate(['password-recover'])
+  navigateToPasswordRecover() {
+    this.router.navigate(['password-recover']);
   }
 }

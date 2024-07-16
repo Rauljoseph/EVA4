@@ -14,6 +14,8 @@ export class HeaderComponent {
 
   constructor(public router: Router){}
 
+  
+
   navigateToSignup(){
     this.router.navigate(['signup'])
   }

@@ -27,12 +27,12 @@ export default class HomeComponent {
   ngOnInit(): void {
     this.getData()
     this.allData = this.signupService.getAllItems();
-    console.log('Todos los datos guardados en localStorage:', this.allData);
     this.allData.forEach(item => {
       const parsedObject = JSON.parse(item.value);
-      this.userList.push(parsedObject);
+      if(parsedObject !== true){
+        this.userList.push(parsedObject);
+      }      
     });
-    console.log(this.userList);
   }
 
   getData() {
@@ -40,12 +40,7 @@ export default class HomeComponent {
 
     this.userData = this.signupService.getItem(this.username);
 
-    this.letterIcon = this.userData?.username.split("").slice(0,1).join("").toUpperCase()
-    console.log(this.letterIcon);
-    
-
-    console.log('este el home component', this.userData);
-
+    this.letterIcon = this.userData?.username.split("").slice(0,1).join("").toUpperCase()    
   }
 
   logout() {

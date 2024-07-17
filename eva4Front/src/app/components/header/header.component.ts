@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IconletterComponent } from '../iconletter/iconletter.component';
+import { SignupService } from '../../services/signup.service';
 
 
 @Component({
@@ -12,9 +13,7 @@ import { IconletterComponent } from '../iconletter/iconletter.component';
 })
 export class HeaderComponent {
 
-  constructor(public router: Router){}
-
-  
+  constructor(public router: Router, public localStorage: SignupService){}
 
   navigateToSignup(){
     this.router.navigate(['signup'])

@@ -1,14 +1,21 @@
-
 <section class="custom-section">
-    <header>
-        <p>Bienvenid&#64;, {{userData!.username}}</p>
+    <!-- <header>
+        <p>Bienvenid&#64; {{userData!.username}}</p>
         <button (click)="logout()" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 btn-custom">Log out</button>
         <app-iconletter [letter]="letterIcon"></app-iconletter>
-    </header>
+    </header> -->
 
-    <section>
-        <table class="table table-bordered table-striped">
-            <thead class="table-dark">
+    <aside class="aside">
+        <div>
+            <app-iconletter [letter]="letterIcon"></app-iconletter>
+            <h1>{{userData!.username}}</h1>
+        </div>
+        <a class="logout" (click)="logout()">Log out</a>
+    </aside>
+
+    <section class="table-container">
+        <table class="styled-table">
+            <thead>
                 <tr>
                     <th>Username</th>
                     <th>Email</th>
@@ -16,14 +23,14 @@
             </thead>
             <tbody>
                 @for(user of userList; track user){
-                    <tr>
-                        <td>{{user.username}}</td>
-                        <td>{{user.email}}</td>
-                    </tr>
-
-                }
+                        <tr>
+                            <td>{{user.username}}</td>
+                            <td>{{user.email}}</td>
+                        </tr>
+                    }
             </tbody>
         </table>
     </section>
     
 </section>
+

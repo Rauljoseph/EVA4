@@ -19,6 +19,7 @@ export default class LoginComponent {
     password: '',
   };
   warningMessage = '';
+  inputPasswordType = true
 
   validations() {
     this.warningMessage = '';
@@ -63,5 +64,14 @@ export default class LoginComponent {
 
   navigateToPasswordRecover() {
     this.router.navigate(['password-recover']);
+  }
+
+  switchPasswordType(){
+    if(this.inputPasswordType) {
+      this.inputPasswordType = false
+    } else {
+      this.inputPasswordType = true
+    }
+    
   }
 }

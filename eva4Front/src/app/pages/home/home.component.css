@@ -1,22 +1,66 @@
 .custom-section{
     min-height: 100vh;
+    display: flex;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid red;
-    padding: 20px;
+.logout {
+  cursor: pointer;
 }
 
-a{
-    height: 30px;
-    border-radius: 50%;
+.aside {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    padding: 35px;
+    gap: 40px;
+    background-color: #F1F5F9;
+    width: 250px;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+
+.aside div {
+    display: flex;
+    gap: 10px;
     align-items: center;
 }
 
-.btn-custom{
-    width: 100px;
+.table-container {
+    /* padding: 50px;
+    width: 100%;
+    background-color: #F1F5F9; */
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+   
 }
+.styled-table thead tr {
+    background-color: #F1F5F9;
+    color: #333;
+    text-align: left;
+  }
+
+  .styled-table th,
+  .styled-table td {
+    padding: 12px 15px;
+  }
+  
+   .styled-table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #F1F5F9;
+  }
+  
+  .styled-table tbody tr:hover {
+    background-color:#F1F5F9;
+  }

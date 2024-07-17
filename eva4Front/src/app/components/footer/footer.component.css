@@ -1,8 +1,23 @@
-footer{
+.footer{
     height: 150px;
     background-color: #1f2937;
-    color: white;
+    color: #FBFBFC;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icons-container {
+    display: flex;
+    gap: 20px;
+    font-size: 30px;
+}
+
+.icons-container a:hover{
+    color: #6366F1;
+    font-size: 35px;
+    transition-duration: 500ms;
+    transition-property: font-size, color;
 }

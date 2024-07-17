@@ -28,6 +28,8 @@ export default class SignupComponent {
 
   warningMessage = '';
   successMessage = '';
+  inputPasswordType = true;
+  inputConfirmPasswordType = true;
 
   async validations() {
     this.warningMessage = '';
@@ -110,5 +112,21 @@ export default class SignupComponent {
 
   navigateToLogin() {
     this.router.navigate(['login']);
+  }
+
+  switchPasswordType(){
+    if(this.inputPasswordType) {
+      this.inputPasswordType = false
+    } else {
+      this.inputPasswordType = true
+    }
+  }
+
+  switchConfirmPasswordType(){
+    if(this.inputConfirmPasswordType) {
+      this.inputConfirmPasswordType = false
+    } else {
+      this.inputConfirmPasswordType = true
+    }
   }
 }

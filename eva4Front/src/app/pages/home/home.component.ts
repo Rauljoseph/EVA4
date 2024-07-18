@@ -8,7 +8,7 @@ import { IconletterComponent } from '../../components/iconletter/iconletter.comp
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, IconletterComponent],
+  imports: [ IconletterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

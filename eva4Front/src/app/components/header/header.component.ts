@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { IconletterComponent } from '../iconletter/iconletter.component';
 import { SignupService } from '../../services/signup.service';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [IconletterComponent],
+  imports: [],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

@@ -1,5 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
-import { EventEmitter } from 'node:stream';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-iconletter',
@@ -10,10 +9,6 @@ import { EventEmitter } from 'node:stream';
 })
 export class IconletterComponent {
 
-  @Input() letter: string | undefined; 
-  // @Output() letterClick = new EventEmitter<any>(); // Output property to emit event
+  @Input() letter: string | undefined
 
-//   onClick() {
-//     this.letterClick.emit(this.letter); // Emit the event with the letter value
-//   }
 }

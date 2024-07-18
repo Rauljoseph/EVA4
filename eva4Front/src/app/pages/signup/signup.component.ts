@@ -16,9 +16,6 @@ import { SignupService } from '../../services/signup.service';
 export default class SignupComponent {
   constructor(private router: Router, private localStorage: SignupService) {}
 
-  isInvalid: boolean = false;
-  isValid: boolean = false;
-
   signupForm: User = {
     username: '',
     email: '',
@@ -42,7 +39,6 @@ export default class SignupComponent {
       this.signupForm.confirmPassword.length === 0
     ) {
       this.warningMessage = 'Todos los campos son obligatorios';
-      this.isInvalid = !this.isInvalid;
       return;
     }
     

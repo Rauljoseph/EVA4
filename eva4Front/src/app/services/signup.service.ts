@@ -8,15 +8,18 @@ export class SignupService {
  
   constructor() { }
 
+  private isLocalStorageAvailable(): boolean {
+    return typeof window !== 'undefined' && !!window.localStorage;
+  }
+
   setItem(key: string, value: string): void {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (this.isLocalStorageAvailable()) {
       localStorage.setItem(key, value);
-      console.log("Guardado exitosamente");
     }
   }
 
   getItem(key: string): User | null {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (this.isLocalStorageAvailable()) {
       const item = localStorage.getItem(key)
       console.log('este es el local', item);
       
@@ -28,19 +31,19 @@ export class SignupService {
   }
 
   removeItem(key: string): void {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (this.isLocalStorageAvailable()) {
       localStorage.removeItem(key);
     }
   }
 
   clear(): void {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (this.isLocalStorageAvailable()) {
       localStorage.clear();
     }
   }
 
   login(): boolean {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (this.isLocalStorageAvailable()) {
       localStorage.setItem('loggedIn', 'true');
       return true;
     }
@@ -48,21 +51,21 @@ export class SignupService {
   }
 
   isLoggedIn(): boolean {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (this.isLocalStorageAvailable()) {
       return localStorage.getItem('loggedIn') === 'true';
     }
     return false;
   }
 
   logout(): void {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (this.isLocalStorageAvailable()) {
       localStorage.removeItem('loggedIn');
     }
   }
 
   getAllItems(): { key: string, value: string }[] {
     const items: { key: string, value: string }[] = [];
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (this.isLocalStorageAvailable()) {
       for (let i = 0; i < localStorage.length; i++) {
         const key = localStorage.key(i);
         if (key) {
